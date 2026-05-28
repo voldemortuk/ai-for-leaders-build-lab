@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acceler | The Leaders' Build Lab — Session Experience</title>
+<title>Acceler | AI For Leaders Build Lab — Session Experience</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,9 +12,9 @@
     --bg: #f7f9fc;
     --bg2: #eef2f9;
     --card: #ffffff;
-    --navy: #1B2A6B;        /* acceler wordmark navy — headings */
-    --navy-deep: #0E1640;   /* dark slide background */
-    --cyan: #27B4E6;        /* acceler accent square */
+    --navy: #1B2A6B;
+    --navy-deep: #0E1640;
+    --cyan: #27B4E6;
     --cyan-dk: #1690C2;
     --cyan-soft: #E8F7FD;
     --ink: #0F1A3D;
@@ -32,56 +32,26 @@
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-font-smoothing: antialiased; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font-body);
-    overflow: hidden;
-    height: 100vh; width: 100vw;
-  }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); overflow: hidden; height: 100vh; width: 100vw; }
 
   .deck { width: 100vw; height: 100vh; position: relative; background: var(--bg); }
-
   .slide {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    padding: 56px 76px;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.45s ease;
-    background: var(--bg);
-    overflow: hidden;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 56px 76px; opacity: 0; pointer-events: none; transition: opacity 0.45s ease;
+    background: var(--bg); overflow: hidden;
   }
   .slide.active { opacity: 1; pointer-events: auto; }
   .slide__inner { max-width: 1180px; width: 100%; }
 
   /* ---------- Acceler wordmark ---------- */
-  .logo {
-    font-family: var(--font-body);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--navy);
-    line-height: 1;
-    display: inline-flex;
-    align-items: flex-start;
-  }
+  .logo { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.04em; color: var(--navy); line-height: 1; display: inline-flex; align-items: flex-start; }
   .logo .lo-a { position: relative; display: inline-block; }
-  .logo .lo-sq {
-    position: absolute;
-    top: 0.10em; left: 0.14em;
-    width: 0.30em; height: 0.30em;
-    background: var(--cyan);
-    border-radius: 1px;
-  }
+  .logo .lo-sq { position: absolute; top: 0.10em; left: 0.14em; width: 0.30em; height: 0.30em; background: var(--cyan); border-radius: 1px; }
   .logo--light { color: #fff; }
 
   /* ---------- Typography ---------- */
-  .eyebrow {
-    font-size: 14px; font-weight: 700;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--cyan-dk); margin-bottom: 16px;
-  }
+  .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-dk); margin-bottom: 16px; }
   .heading-xl { font-family: var(--font-display); font-size: clamp(46px,5.4vw,74px); line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); }
   .heading-lg { font-family: var(--font-display); font-size: clamp(38px,4.3vw,56px); line-height: 1.12; color: var(--ink); }
   .heading-md { font-family: var(--font-display); font-size: clamp(26px,3.2vw,38px); line-height: 1.2; color: var(--ink); }
@@ -95,8 +65,7 @@
   .slide-counter { position: fixed; top: 22px; right: 30px; font-size: 13px; font-weight: 600; color: var(--muted); z-index: 100; letter-spacing: 0.05em; opacity: 0; transition: opacity 0.4s ease; }
   .slide-counter.visible { opacity: 1; }
   .click-zone { position: fixed; top: 0; width: 14%; height: 100%; z-index: 50; cursor: pointer; }
-  .click-zone--prev { left: 0; }
-  .click-zone--next { right: 0; }
+  .click-zone--prev { left: 0; } .click-zone--next { right: 0; }
   .branding { position: fixed; bottom: 26px; right: 30px; z-index: 100; opacity: 0.6; }
   .branding .logo { font-size: 20px; }
 
@@ -108,29 +77,19 @@
 
   /* ---------- Cover ---------- */
   .slide--cover { background: var(--navy-deep); text-align: center; }
-  .cover__logo { margin-bottom: 38px; }
-  .cover__logo .logo { font-size: 56px; }
-  .cover__badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(39,180,230,0.14); border: 1px solid rgba(39,180,230,0.35);
-    color: var(--cyan); padding: 9px 22px; border-radius: 100px;
-    font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 28px;
-  }
-  .cover__title { font-family: var(--font-display); font-size: clamp(46px,5.2vw,72px); color: #fff; line-height: 1.08; max-width: 900px; margin: 0 auto 22px; }
-  .cover__sub { max-width: 720px; margin: 0 auto 38px; font-size: 21px; color: rgba(255,255,255,0.58); line-height: 1.6; }
+  .cover__logo { margin-bottom: 36px; }
+  .cover__logo .logo { font-size: 52px; }
+  .cover__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(39,180,230,0.14); border: 1px solid rgba(39,180,230,0.35); color: var(--cyan); padding: 9px 22px; border-radius: 100px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
+  .cover__title { font-family: var(--font-display); font-size: clamp(44px,5vw,68px); color: #fff; line-height: 1.05; max-width: 900px; margin: 0 auto 22px; }
+  .cover__sub { max-width: 720px; margin: 0 auto 34px; font-size: 21px; color: rgba(255,255,255,0.58); line-height: 1.6; }
   .cover__meta { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .cover__chip {
-    display: inline-flex; align-items: center; gap: 9px;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 100px; padding: 11px 22px; font-size: 16px; color: rgba(255,255,255,0.82); font-weight: 500;
-  }
+  .cover__chip { display: inline-flex; align-items: center; gap: 9px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 100px; padding: 11px 22px; font-size: 16px; color: rgba(255,255,255,0.82); font-weight: 500; }
   .cover__chip strong { color: #fff; font-weight: 700; }
   .cover__chip .ic { font-size: 18px; }
-  .cover__foot { margin-top: 40px; font-size: 14px; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
+  .cover__foot { margin-top: 38px; font-size: 14px; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
 
-  /* ---------- Slide header (content slides) ---------- */
-  .shead { margin-bottom: 30px; }
+  /* ---------- Content slide header ---------- */
+  .shead { margin-bottom: 28px; }
   .shead .heading-md { margin-top: 4px; }
   .shead-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 
@@ -162,17 +121,40 @@
   .tl__node.active .tl__time { color: var(--cyan-dk); }
   .tl__lab { font-size: 14px; font-weight: 600; color: var(--text2); margin-top: 3px; line-height: 1.25; max-width: 130px; transition: color 0.3s; }
   .tl__node.active .tl__lab { color: var(--ink); }
-  .tl__detail {
-    margin-top: 30px; background: var(--card); border: 1px solid var(--border);
-    border-left: 5px solid var(--cyan); border-radius: 14px; padding: 24px 28px;
-    min-height: 132px; box-shadow: 0 4px 24px rgba(15,26,77,0.05);
-  }
+  .tl__detail { margin-top: 30px; background: var(--card); border: 1px solid var(--border); border-left: 5px solid var(--cyan); border-radius: 14px; padding: 24px 28px; min-height: 132px; box-shadow: 0 4px 24px rgba(15,26,77,0.05); }
   .tl__d-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-  .tl__d-badge { background: var(--cyan-soft); color: var(--cyan-dk); font-size: 13px; font-weight: 700; padding: 5px 13px; border-radius: 100px; letter-spacing: 0.04em; }
-  .tl__d-title { font-family: var(--font-display); font-size: 26px; color: var(--ink); }
+  .tl__d-badge { background: var(--cyan-soft); color: var(--cyan-dk); font-size: 13px; font-weight: 700; padding: 5px 13px; border-radius: 100px; letter-spacing: 0.04em; white-space: nowrap; }
+  .tl__d-title { font-family: var(--font-display); font-size: 25px; color: var(--ink); }
   .tl__d-body { font-size: 17px; color: var(--text2); line-height: 1.6; }
   .tl__d-body b { color: var(--ink); font-weight: 700; }
   .tl__hint { text-align: center; margin-top: 16px; font-size: 13px; color: var(--muted); letter-spacing: 0.03em; }
+
+  /* ---------- Beats (walkthrough) ---------- */
+  .beats { display: flex; flex-direction: column; gap: 15px; }
+  .beat { display: grid; grid-template-columns: 116px 1fr; gap: 22px; align-items: stretch; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .beat__time { background: var(--navy); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 8px; text-align: center; }
+  .beat__time .t1 { font-family: var(--font-display); font-size: 23px; line-height: 1; }
+  .beat__time .t2 { font-size: 12px; color: var(--cyan); font-weight: 700; margin-top: 6px; letter-spacing: 0.04em; }
+  .beat--milestone .beat__time { background: var(--cyan); }
+  .beat--milestone .beat__time .t2 { color: #fff; }
+  .beat__body { padding: 14px 22px 14px 0; display: flex; flex-direction: column; justify-content: center; }
+  .beat__title { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 4px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .beat__title .ic { font-size: 20px; }
+  .beat__title .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
+  .beat__title .tag--build { color: var(--cyan-dk); background: var(--cyan-soft); }
+  .beat__title .tag--ms { color: #fff; background: var(--cyan); }
+  .beat__desc { font-size: 15px; color: var(--text2); line-height: 1.5; }
+  .beat__desc b { color: var(--ink); }
+  .beats-foot { margin-top: 16px; font-size: 14.5px; color: var(--text2); text-align: center; line-height: 1.5; }
+  .beats-foot b { color: var(--navy); }
+
+  .beats--tight { gap: 11px; }
+  .beats--tight .beat { grid-template-columns: 104px 1fr; }
+  .beats--tight .beat__time { padding: 9px 8px; }
+  .beats--tight .beat__time .t1 { font-size: 21px; }
+  .beats--tight .beat__body { padding: 10px 20px 10px 0; }
+  .beats--tight .beat__title { font-size: 16.5px; margin-bottom: 2px; }
+  .beats--tight .beat__desc { font-size: 13.5px; }
 
   /* ---------- Role cards (the room) ---------- */
   .roomgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -188,48 +170,22 @@
   .room-foot .ic { font-size: 22px; flex-shrink: 0; }
   .room-foot b { color: var(--cyan); }
 
-  /* ---------- Scenario slide ---------- */
-  .scn { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 30px; align-items: start; }
-  .scn__persona { background: var(--navy-deep); border-radius: 18px; padding: 30px 28px; color: #fff; }
-  .scn__avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--cyan), var(--navy)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 28px; color: #fff; margin-bottom: 18px; }
-  .scn__pname { font-family: var(--font-display); font-size: 30px; margin-bottom: 4px; }
-  .scn__prole { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 20px; line-height: 1.5; }
-  .scn__pmeta { list-style: none; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 18px; }
-  .scn__pmeta li { font-size: 14.5px; color: rgba(255,255,255,0.78); line-height: 1.5; padding-left: 24px; position: relative; }
-  .scn__pmeta li .k { color: var(--cyan); font-weight: 700; }
-  .scn__pmeta li::before { content: '·'; position: absolute; left: 8px; color: var(--cyan); font-weight: 700; }
-  .scn__nobyop { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; background: rgba(39,180,230,0.14); border: 1px solid rgba(39,180,230,0.3); color: var(--cyan); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 16px; border-radius: 100px; }
+  /* ---------- Use-case menu ---------- */
+  .ucgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .ucard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; position: relative; }
+  .ucard--feat { border-color: var(--cyan); box-shadow: 0 8px 28px rgba(39,180,230,0.12); }
+  .ucard__feat-pill { position: absolute; top: 16px; right: 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan-dk); background: var(--cyan-soft); padding: 4px 10px; border-radius: 100px; }
+  .ucard__tag { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan-dk); margin-bottom: 8px; }
+  .ucard__persona { font-family: var(--font-display); font-size: 21px; color: var(--ink); margin-bottom: 2px; }
+  .ucard__role { font-size: 14px; color: var(--text2); margin-bottom: 14px; }
+  .ucard__builds { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ucard__chip { font-size: 13px; font-weight: 600; color: var(--navy); background: var(--bg2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px; }
+  .ucard__chip .n { color: var(--cyan-dk); font-weight: 700; }
+  .uc-banner { margin-top: 18px; background: var(--navy); color: #fff; border-radius: 14px; padding: 16px 24px; display: flex; align-items: center; gap: 14px; font-size: 15.5px; line-height: 1.5; }
+  .uc-banner .ic { font-size: 20px; flex-shrink: 0; }
+  .uc-banner b { color: var(--cyan); }
 
-  .build { display: flex; flex-direction: column; gap: 14px; }
-  .buildcard { display: flex; gap: 16px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
-  .buildcard--demo { background: var(--bg2); border-style: dashed; }
-  .buildcard__n { flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: var(--cyan); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; }
-  .buildcard--demo .buildcard__n { background: var(--muted); font-size: 19px; }
-  .buildcard__b { flex: 1; }
-  .buildcard__t { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
-  .buildcard__t .pill { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan-dk); background: var(--cyan-soft); padding: 3px 9px; border-radius: 100px; margin-left: 8px; vertical-align: middle; }
-  .buildcard--demo .buildcard__t .pill { color: var(--text2); background: #e2e8f0; }
-  .buildcard__d { font-size: 14.5px; color: var(--text2); line-height: 1.5; }
-  .scn__note { margin-top: 4px; font-size: 14px; color: var(--muted); font-style: italic; line-height: 1.5; }
-
-  /* ---------- Walkthrough (beat) slides ---------- */
-  .beats { display: flex; flex-direction: column; gap: 16px; }
-  .beat { display: grid; grid-template-columns: 116px 1fr; gap: 22px; align-items: stretch; background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-  .beat__time { background: var(--navy); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 8px; text-align: center; }
-  .beat__time .t1 { font-family: var(--font-display); font-size: 24px; line-height: 1; }
-  .beat__time .t2 { font-size: 12px; color: var(--cyan); font-weight: 700; margin-top: 6px; letter-spacing: 0.04em; }
-  .beat--milestone .beat__time { background: var(--cyan); }
-  .beat--milestone .beat__time .t2 { color: #fff; }
-  .beat__body { padding: 16px 22px 16px 0; display: flex; flex-direction: column; justify-content: center; }
-  .beat__title { font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
-  .beat__title .ic { font-size: 20px; }
-  .beat__title .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; }
-  .beat__title .tag--build { color: var(--cyan-dk); background: var(--cyan-soft); }
-  .beat__title .tag--ms { color: #fff; background: var(--cyan); }
-  .beat__desc { font-size: 15.5px; color: var(--text2); line-height: 1.55; }
-  .beat__desc b { color: var(--ink); }
-
-  /* ---------- Why-it-works (dark closing) ---------- */
+  /* ---------- Why-it-works (close) ---------- */
   .why { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .whycard { background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px 26px; }
   .whycard__ic { font-size: 28px; margin-bottom: 12px; }
@@ -250,7 +206,7 @@
     @page { size: 1280px 720px; margin: 0; }
     .slide { page-break-after: always; page-break-inside: avoid; opacity: 1 !important; pointer-events: auto !important; position: relative !important; }
     .progress-bar, .branding, .slide-counter, .click-zone, .notes-panel, .tl__hint { display: none !important; }
-    .tl__node { } .tl__node .tl__dot { border-color: var(--cyan); }
+    .tl__node .tl__dot { border-color: var(--cyan); }
   }
 </style>
 </head>
@@ -263,11 +219,11 @@
     <div class="slide__inner">
       <div class="cover__logo"><span class="logo logo--light"><span class="lo-a">a<span class="lo-sq"></span></span>cceler</span></div>
       <div class="cover__badge">Leadership AI · Session Format</div>
-      <div class="cover__title">The Leaders' <span style="color:var(--cyan);">Build Lab</span></div>
-      <p class="cover__sub">Reimagining the hands-on build as a team mini-hackathon — leaders ship real AI agents together, in one room, in one sitting.</p>
+      <div class="cover__title">AI For Leaders<br><span style="color:var(--cyan);">Build Lab</span></div>
+      <p class="cover__sub">Reimagining the solo hands-on build as a shared, team-based build — leaders ship real AI agents together, in one room, in one sitting.</p>
       <div class="cover__meta">
-        <span class="cover__chip"><span class="ic">⏱️</span><strong>2–2.5 hours</strong> · single sitting</span>
-        <span class="cover__chip"><span class="ic">👥</span>Teams of <strong>4–5 leaders</strong></span>
+        <span class="cover__chip"><span class="ic">⏱️</span><strong>2–3 hours</strong> · single sitting</span>
+        <span class="cover__chip"><span class="ic">👥</span>Teams of <strong>3 leaders</strong></span>
         <span class="cover__chip"><span class="ic">🛠️</span><strong>1 Build Coach</strong> per team</span>
       </div>
       <div class="cover__foot">Session experience walkthrough · for review</div>
@@ -279,7 +235,7 @@
     <div class="slide__inner">
       <div class="shead">
         <div class="eyebrow">Why we're changing the build</div>
-        <div class="heading-md">The solo build splits the room. A team sprint pulls it together.</div>
+        <div class="heading-md">The solo build splits the room. A shared build pulls it together.</div>
       </div>
       <div class="ba">
         <div class="ba__col">
@@ -296,10 +252,10 @@
           </div>
         </div>
         <div class="ba__col">
-          <div class="ba__col-label ba__col-label--after">▲ Proposed · Team mini-hackathon</div>
+          <div class="ba__col-label ba__col-label--after">▲ Proposed · Team Build Lab</div>
           <div class="ba__card ba__card--good">
             <div class="ba__h">Small teams build toward a live demo</div>
-            <div class="ba__sub">Leaders build in teams, each with an embedded senior engineer, racing to a 3-minute demo.</div>
+            <div class="ba__sub">Leaders build in teams of three, each with an embedded senior engineer, racing to a 3-minute demo.</div>
             <ul class="ba__list">
               <li>The team absorbs the spread — fast pull, slower learn by doing</li>
               <li>A Build Coach unblocks instantly; nobody is left falling behind</li>
@@ -312,31 +268,119 @@
     </div>
   </div>
 
-  <!-- ============ SLIDE 3: SESSION AT A GLANCE (interactive timeline) ============ -->
+  <!-- ============ SLIDE 3: FLOW AT A GLANCE (interactive timeline) ============ -->
   <div class="slide">
     <div class="slide__inner">
       <div class="shead">
-        <div class="eyebrow">The shape of the session · ~2.5 hours</div>
-        <div class="heading-md">Two builds, one check-in, one demo round.</div>
+        <div class="eyebrow">The shape of the session · 2–3 hours</div>
+        <div class="heading-md">A common open, two builds, one check-in, one demo round.</div>
       </div>
       <div class="tl">
         <div class="tl__track" id="tlTrack">
           <div class="tl__line"></div>
           <div class="tl__fill" id="tlFill"></div>
-          <div class="tl__node" data-step="0"><span class="tl__dot"></span><div class="tl__time">0:00</div><div class="tl__lab">Kickoff &amp; Contrast</div></div>
-          <div class="tl__node" data-step="1"><span class="tl__dot"></span><div class="tl__time">0:20</div><div class="tl__lab">Build 1</div></div>
-          <div class="tl__node" data-step="2"><span class="tl__dot"></span><div class="tl__time">0:55</div><div class="tl__lab">Check-in</div></div>
-          <div class="tl__node" data-step="3"><span class="tl__dot"></span><div class="tl__time">1:05</div><div class="tl__lab">Build 2</div></div>
-          <div class="tl__node" data-step="4"><span class="tl__dot"></span><div class="tl__time">1:45</div><div class="tl__lab">Pitch Prep</div></div>
-          <div class="tl__node" data-step="5"><span class="tl__dot"></span><div class="tl__time">2:00</div><div class="tl__lab">Demos &amp; Close</div></div>
+          <div class="tl__node" data-step="0"><span class="tl__dot"></span><div class="tl__time">0:00</div><div class="tl__lab">Common Open</div></div>
+          <div class="tl__node" data-step="1"><span class="tl__dot"></span><div class="tl__time">0:30</div><div class="tl__lab">Build 1</div></div>
+          <div class="tl__node" data-step="2"><span class="tl__dot"></span><div class="tl__time">1:05</div><div class="tl__lab">Check-in</div></div>
+          <div class="tl__node" data-step="3"><span class="tl__dot"></span><div class="tl__time">1:15</div><div class="tl__lab">Build 2</div></div>
+          <div class="tl__node" data-step="4"><span class="tl__dot"></span><div class="tl__time">1:55</div><div class="tl__lab">Pitch Prep</div></div>
+          <div class="tl__node" data-step="5"><span class="tl__dot"></span><div class="tl__time">2:10</div><div class="tl__lab">Demos &amp; Close</div></div>
         </div>
         <div class="tl__detail" id="tlDetail"></div>
-        <div class="tl__hint" id="tlHint">→ Press the arrow key to walk through each phase</div>
+        <div class="tl__hint" id="tlHint">→ Press the arrow key to walk through each phase · the next slides drill into each part</div>
       </div>
     </div>
   </div>
 
-  <!-- ============ SLIDE 4: THE ROOM ============ -->
+  <!-- ============ SLIDE 4: THE COMMON OPEN (detail) ============ -->
+  <div class="slide">
+    <div class="slide__inner">
+      <div class="shead">
+        <div class="eyebrow">Detail · The common open — first 30 minutes</div>
+        <div class="heading-md">Before teams split — one shared block, with the SMEs.</div>
+      </div>
+      <div class="beats">
+        <div class="beat">
+          <div class="beat__time"><div class="t1">0:00</div><div class="t2">5 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">🎬</span>Welcome &amp; the aim</div>
+            <div class="beat__desc">Instructor sets the room: why we're here and <b>what every leader walks out with</b> — two working agents and the instinct to build more.</div>
+          </div>
+        </div>
+        <div class="beat">
+          <div class="beat__time"><div class="t1">0:05</div><div class="t2">10 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">⚡</span>The contrast, live</div>
+            <div class="beat__desc">Instructor runs <b>stock AI vs a grounded custom agent</b> on the same question. The room feels the gap in five minutes — the "aha" that powers the rest.</div>
+          </div>
+        </div>
+        <div class="beat">
+          <div class="beat__time"><div class="t1">0:15</div><div class="t2">5 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">🧠</span>The mental model</div>
+            <div class="beat__desc">One idea to carry all session: <b>treat your agent like a chief of staff you train once</b>. Ten minutes of context pays back forever.</div>
+          </div>
+        </div>
+        <div class="beat">
+          <div class="beat__time"><div class="t1">0:20</div><div class="t2">10 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">👥</span>Form teams &amp; pick a scenario</div>
+            <div class="beat__desc">Teams of three form and <b>each picks a use case from the menu</b>. Its Build Coach joins, opens the pre-built kit, and the team is ready to build.</div>
+          </div>
+        </div>
+      </div>
+      <div class="beats-foot">All led from the front, with <b>every Build Coach (SME) in the room</b> — then teams break out to build.</div>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 5: THE TEAM SPRINT (detail) ============ -->
+  <div class="slide">
+    <div class="slide__inner">
+      <div class="shead">
+        <div class="eyebrow">Detail · The team sprint — with your Build Coach</div>
+        <div class="heading-md">Build, check in, build, then demo.</div>
+      </div>
+      <div class="beats beats--tight">
+        <div class="beat">
+          <div class="beat__time"><div class="t1">0:30</div><div class="t2">35 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">🛠️</span>Build 1 — the first agent <span class="tag tag--build">Build</span></div>
+            <div class="beat__desc">Teams build with the Coach pairing alongside. The core discipline lands through doing — <b>a good agent asks before it runs</b>.</div>
+          </div>
+        </div>
+        <div class="beat beat--milestone">
+          <div class="beat__time"><div class="t1">1:05</div><div class="t2">10 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">✅</span>Check-in <span class="tag tag--ms">The one milestone</span></div>
+            <div class="beat__desc">Each team shows the room. One fast course-correction each. <b>The room re-levels here</b> — everyone confirmed working before the harder build.</div>
+          </div>
+        </div>
+        <div class="beat">
+          <div class="beat__time"><div class="t1">1:15</div><div class="t2">40 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">🛠️</span>Build 2 — the richer agent <span class="tag tag--build">Build</span></div>
+            <div class="beat__desc">The harder build reads live calendar, email and Teams. Teams hit the <b>"updated read" moment</b> where a second prompt reframes the picture.</div>
+          </div>
+        </div>
+        <div class="beat">
+          <div class="beat__time"><div class="t1">1:55</div><div class="t2">15 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">🎯</span>Pitch Prep</div>
+            <div class="beat__desc">Teams shape a <b>3-minute demo</b>: what they built, what surprised them, where they'd deploy it on their own team Monday.</div>
+          </div>
+        </div>
+        <div class="beat">
+          <div class="beat__time"><div class="t1">2:10</div><div class="t2">30 MIN</div></div>
+          <div class="beat__body">
+            <div class="beat__title"><span class="ic">🏆</span>Demos &amp; Close</div>
+            <div class="beat__desc">Every team demos live — and because each chose a different scenario, <b>every demo is different</b>. Recognition, then the closing takeaways.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 6: THE ROOM ============ -->
   <div class="slide">
     <div class="slide__inner">
       <div class="shead">
@@ -348,7 +392,7 @@
           <div class="rolecard__ic">🎤</div>
           <div class="rolecard__tag">Front of room</div>
           <div class="rolecard__title">The Instructor</div>
-          <div class="rolecard__desc">Runs the room, not the keyboards. Sets the scene, runs the <b>stock-vs-custom contrast</b>, holds the clock, calls the check-in, and MCs the demos. One per session.</div>
+          <div class="rolecard__desc">Runs the room, not the keyboards. Leads the common open and the <b>stock-vs-custom contrast</b>, holds the clock, calls the check-in, and MCs the demos. One per session.</div>
         </div>
         <div class="rolecard rolecard--hero">
           <div class="rolecard__ic">🛠️</div>
@@ -360,7 +404,7 @@
           <div class="rolecard__ic">👥</div>
           <div class="rolecard__tag">The builders</div>
           <div class="rolecard__title">The Team</div>
-          <div class="rolecard__desc">4–5 leaders who build together and present together. Shared screen, shared scenario, one demo at the end. <b>4–5 teams</b> in a typical leadership cohort.</div>
+          <div class="rolecard__desc"><b>3 leaders</b> who build together and present together — shared screen, one scenario, one demo at the end. A typical leadership cohort splits into <b>~5 teams</b>.</div>
         </div>
       </div>
       <div class="room-foot">
@@ -370,119 +414,55 @@
     </div>
   </div>
 
-  <!-- ============ SLIDE 5: STANDARD SCENARIO (no BYOP) ============ -->
-  <div class="slide">
-    <div class="slide__inner">
-      <div class="shead shead-row">
-        <div>
-          <div class="eyebrow">One scenario, every team · No BYOP</div>
-          <div class="heading-md">Everyone builds for the same executive.</div>
-        </div>
-      </div>
-      <div class="scn">
-        <div class="scn__persona">
-          <div class="scn__avatar">MP</div>
-          <div class="scn__pname">Marko's Day</div>
-          <div class="scn__prole">Marko Petrov — VP Customer Experience &amp; Commercial Operations, <b style="color:#fff;">Yettel Serbia</b> (synthetic telco scenario).</div>
-          <ul class="scn__pmeta">
-            <li><span class="k">The setup</span> — back-to-back meetings, a fast inbox, four fires competing for his week.</li>
-            <li><span class="k">The job</span> — each team builds Marko an AI team that hands him his world in minutes.</li>
-            <li><span class="k">The kit</span> — pre-built Yettel knowledge base + shared workshop accounts. Zero setup.</li>
-          </ul>
-          <span class="scn__nobyop">✦ Standardised — no bring-your-own-project</span>
-        </div>
-        <div>
-          <div class="build">
-            <div class="buildcard">
-              <div class="buildcard__n">1</div>
-              <div class="buildcard__b">
-                <div class="buildcard__t">Market Pulse <span class="pill">Build · ~35 min</span></div>
-                <div class="buildcard__d">A 5-minute market briefing agent, framed for Yettel. Teaches the core discipline: a good agent <b>asks before it runs</b>.</div>
-              </div>
-            </div>
-            <div class="buildcard">
-              <div class="buildcard__n">2</div>
-              <div class="buildcard__b">
-                <div class="buildcard__t">Meeting Prep <span class="pill">Build · ~40 min</span></div>
-                <div class="buildcard__d">Walks Marko into his 1:1 informed — reads his calendar, email and Teams, then an "updated read" once it scans.</div>
-              </div>
-            </div>
-            <div class="buildcard buildcard--demo">
-              <div class="buildcard__n">▶</div>
-              <div class="buildcard__b">
-                <div class="buildcard__t">Monday Morning Brief <span class="pill">Demo only</span></div>
-                <div class="buildcard__d">An agent that runs on a schedule via Power Automate. The instructor demos it — the "ceiling" beyond what teams build.</div>
-              </div>
-            </div>
-          </div>
-          <div class="scn__note">Why standardised: zero setup friction, teams are comparable, the room races on one problem — and the format runs anywhere, cold.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ SLIDE 6: WALKTHROUGH — FIRST HOUR ============ -->
+  <!-- ============ SLIDE 7: USE-CASE MENU ============ -->
   <div class="slide">
     <div class="slide__inner">
       <div class="shead">
-        <div class="eyebrow">What the room feels like · The first hour</div>
-        <div class="heading-md">Frame it, build one, re-level.</div>
+        <div class="eyebrow">Standardised use cases · No BYOP</div>
+        <div class="heading-md">Each team picks a scenario — so every demo is different.</div>
       </div>
-      <div class="beats">
-        <div class="beat">
-          <div class="beat__time"><div class="t1">0:00</div><div class="t2">20 MIN</div></div>
-          <div class="beat__body">
-            <div class="beat__title"><span class="ic">🎬</span>Kickoff &amp; Contrast</div>
-            <div class="beat__desc">Instructor sets the aim and runs <b>stock Researcher</b> live on a Yettel question — competent, but generic. The room feels the gap custom will close. Teams form, accounts open, Build Coaches sit in.</div>
+      <div class="ucgrid">
+        <div class="ucard ucard--feat">
+          <span class="ucard__feat-pill">Worked example</span>
+          <div class="ucard__tag">Customer &amp; Commercial</div>
+          <div class="ucard__persona">Marko's Day</div>
+          <div class="ucard__role">VP Customer Experience · Telco (Yettel Serbia)</div>
+          <div class="ucard__builds">
+            <span class="ucard__chip"><span class="n">1</span> Market Pulse</span>
+            <span class="ucard__chip"><span class="n">2</span> Meeting Prep</span>
           </div>
         </div>
-        <div class="beat">
-          <div class="beat__time"><div class="t1">0:20</div><div class="t2">35 MIN</div></div>
-          <div class="beat__body">
-            <div class="beat__title"><span class="ic">🛠️</span>Build 1 — Market Pulse <span class="tag tag--build">Build</span></div>
-            <div class="beat__desc">Teams build their first agent with the Coach pairing alongside. The discipline lands through doing — <b>their agent refuses to run until it's given a region and a time window.</b></div>
+        <div class="ucard">
+          <div class="ucard__tag">Sales &amp; Revenue</div>
+          <div class="ucard__persona">The Sales VP</div>
+          <div class="ucard__role">VP Sales · B2B SaaS</div>
+          <div class="ucard__builds">
+            <span class="ucard__chip"><span class="n">1</span> Pipeline Pulse</span>
+            <span class="ucard__chip"><span class="n">2</span> Deal-Review Prep</span>
           </div>
         </div>
-        <div class="beat beat--milestone">
-          <div class="beat__time"><div class="t1">0:55</div><div class="t2">10 MIN</div></div>
-          <div class="beat__body">
-            <div class="beat__title"><span class="ic">✅</span>Check-in <span class="tag tag--ms">The one milestone</span></div>
-            <div class="beat__desc">Each team shows their agent to the room. One course-correction per team, fast. <b>The room re-levels here</b> — everyone confirmed working before the harder build begins.</div>
+        <div class="ucard">
+          <div class="ucard__tag">Operations</div>
+          <div class="ucard__persona">The Ops Chief</div>
+          <div class="ucard__role">COO · Manufacturing</div>
+          <div class="ucard__builds">
+            <span class="ucard__chip"><span class="n">1</span> Ops Catch-Up</span>
+            <span class="ucard__chip"><span class="n">2</span> Vendor Brief</span>
+          </div>
+        </div>
+        <div class="ucard">
+          <div class="ucard__tag">People &amp; Talent</div>
+          <div class="ucard__persona">The People Lead</div>
+          <div class="ucard__role">CHRO · Enterprise</div>
+          <div class="ucard__builds">
+            <span class="ucard__chip"><span class="n">1</span> Talent Pulse</span>
+            <span class="ucard__chip"><span class="n">2</span> 1:1 Prep</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- ============ SLIDE 7: WALKTHROUGH — SECOND HOUR ============ -->
-  <div class="slide">
-    <div class="slide__inner">
-      <div class="shead">
-        <div class="eyebrow">What the room feels like · The second hour</div>
-        <div class="heading-md">Build the harder one, prep the pitch, demo it live.</div>
-      </div>
-      <div class="beats">
-        <div class="beat">
-          <div class="beat__time"><div class="t1">1:05</div><div class="t2">40 MIN</div></div>
-          <div class="beat__body">
-            <div class="beat__title"><span class="ic">🛠️</span>Build 2 — Meeting Prep <span class="tag tag--build">Build</span></div>
-            <div class="beat__desc">The richer build: the agent reads live calendar, email and Teams. Teams hit the <b>"updated read" moment</b> — when the second prompt reframes the meeting. This is where AI earns its keep.</div>
-          </div>
-        </div>
-        <div class="beat">
-          <div class="beat__time"><div class="t1">1:45</div><div class="t2">15 MIN</div></div>
-          <div class="beat__body">
-            <div class="beat__title"><span class="ic">🎯</span>Pitch Prep</div>
-            <div class="beat__desc">Teams shape a <b>3-minute demo</b>: what they built, what surprised them, and where they'd deploy it on their own team Monday. Coaches help pick the sharpest live moment to show.</div>
-          </div>
-        </div>
-        <div class="beat">
-          <div class="beat__time"><div class="t1">2:00</div><div class="t2">30 MIN</div></div>
-          <div class="beat__body">
-            <div class="beat__title"><span class="ic">🏆</span>Demos &amp; Close</div>
-            <div class="beat__desc">Each team demos live. Quick recognition — best agent, best discipline. Instructor lands the takeaways: <b>stock is generic, custom is yours; treat your agent like a chief of staff; cascade it to your teams.</b></div>
-          </div>
-        </div>
+      <div class="uc-banner">
+        <span class="ic">🔒</span>
+        <div><b>No BYOP.</b> Every scenario is pre-built by Acceler — knowledge base, workshop accounts, and both agents ready to go. Teams just pick from the menu, so <b>different teams demo different agents</b> — that's the variety in the room.</div>
       </div>
     </div>
   </div>
@@ -491,14 +471,14 @@
   <div class="slide slide--dark">
     <div class="slide__inner">
       <div class="shead">
-        <div class="eyebrow">Why the hackathon format lands</div>
+        <div class="eyebrow">Why the Build Lab lands</div>
         <div class="heading-md" style="color:#fff;">It fixes exactly what the solo build couldn't.</div>
       </div>
       <div class="why">
         <div class="whycard">
           <div class="whycard__ic">⚖️</div>
           <div class="whycard__t">Self-balancing pace</div>
-          <div class="whycard__d">The team plus an embedded coach absorb the spread between fast and slow leaders. <b>Nobody is left falling behind.</b></div>
+          <div class="whycard__d">A team of three plus an embedded coach absorb the spread between fast and slow leaders. <b>Nobody is left falling behind.</b></div>
         </div>
         <div class="whycard">
           <div class="whycard__ic">🛠️</div>
@@ -508,12 +488,12 @@
         <div class="whycard">
           <div class="whycard__ic">🔁</div>
           <div class="whycard__t">Comparable &amp; repeatable</div>
-          <div class="whycard__d">One standard scenario means we pre-build everything once and <b>run it anywhere — Madan can deliver it cold.</b></div>
+          <div class="whycard__d">A standard menu of scenarios means we pre-build once and <b>run it anywhere — Madan can deliver it cold.</b></div>
         </div>
         <div class="whycard">
           <div class="whycard__ic">✨</div>
           <div class="whycard__t">Feels like a win</div>
-          <div class="whycard__d">The room leaves with artifacts and a story to tell — <b>not "a session I sat through."</b></div>
+          <div class="whycard__d">Teams pick different scenarios, so the demo round stays fresh — the room leaves with artifacts and <b>a story, not "a session I sat through."</b></div>
         </div>
       </div>
       <div class="nextstep">
@@ -549,14 +529,14 @@
   let notesVisible = false;
 
   const speakerNotes = {
-    0: "COVER. This is a walkthrough of a proposed new format for the leaders' build session — reframing the solo hands-on build as a team mini-hackathon. Frame the room: this is how the session would feel end to end. 2–2.5 hrs, teams of 4–5, one Build Coach per team.",
-    1: "THE REFRAME. Name the real problem honestly: in the solo build, the room splits — fast leaders coast, slower ones quietly check out, and the energy tips to impatience. The team-hackathon shape fixes the mechanism, not just the content. Let the before/after contrast do the work.",
-    2: "SESSION AT A GLANCE. Walk the timeline left to right — press the arrow to advance each phase. Land the rhythm: two builds, one check-in in the middle to re-level the room, then a demo round. Total ~2.5 hrs, sits comfortably in a 2–3 hr window.",
-    3: "THE ROOM. The Build Coach is the centre of gravity — emphasise this. It's what makes a mixed-pace room of senior leaders all reach a working demo. Instructor runs the room and the clock; the coach runs the team. Coaches come from our senior FAANG+ freelance instructor pool.",
-    4: "STANDARD SCENARIO. The 'no BYOP' decision. Everyone builds for Marko at Yettel — a synthetic exec. Two builds (Market Pulse, Meeting Prep) plus one autonomous demo (Monday Brief). Standardising is what makes it pre-buildable, comparable, fair, and deliverable cold anywhere.",
-    5: "FIRST HOUR. Talk through the felt experience: the contrast demo creates the 'aha', Build 1 teaches the core discipline through doing, and the check-in is the single milestone that re-levels everyone before the harder build. This is the moment that prevents anyone falling behind.",
-    6: "SECOND HOUR. Build 2 is richer (live calendar/email/Teams) and carries the 'updated read' payoff moment. Pitch prep makes them articulate value. Demos + recognition give the win and the story. Close on the three takeaways leaders carry back to their teams.",
-    7: "WHY IT WORKS / ASK. Tie each card back to a problem from slide 2 — pace, ownership, repeatability, the feeling. Then make the ask concrete: pilot it on one cohort, Madan delivers, pick a client and a date. Invite reactions from Soham / Ryan."
+    0: "COVER. A walkthrough of a proposed new format — reframing the solo hands-on leaders' build as a shared, team-based Build Lab. Frame the room: this is how the session feels end to end. 2–3 hrs, teams of 3 leaders + 1 Build Coach.",
+    1: "THE REFRAME. Name the real problem: in the solo build the room splits — fast leaders coast, slower ones disengage, energy tips to impatience. The team Build Lab fixes the mechanism, not just the content. Let the before/after contrast carry it.",
+    2: "FLOW AT A GLANCE. Walk the timeline left to right (arrow advances each phase). The shape: a 30-min common open with the SMEs, then two builds with a check-in between, then pitch prep and a demo round. The next two slides drill into each part.",
+    3: "THE COMMON OPEN (detail). The first 30 minutes are shared, led from the front with every Build Coach in the room — welcome, the live contrast 'aha', the chief-of-staff mental model, then teams form and pick their scenario. Nobody builds alone yet.",
+    4: "THE TEAM SPRINT (detail). Teams break out with their Coach. Build 1 teaches the discipline by doing; the check-in is the single milestone that re-levels everyone; Build 2 is richer and carries the 'updated read' payoff; then prep and live demos. Different scenarios = every demo different.",
+    5: "THE ROOM. The Build Coach is the engine — a senior FAANG+ engineer embedded in each team of 3. Instructor runs the room and the clock; the coach runs the team and absorbs the pace gap. Coaches come from our freelance instructor pool.",
+    6: "USE-CASE MENU. The 'no BYOP' decision — scenarios are standardised and pre-built by us (knowledge base + accounts + both agents). Teams pick from the menu, and different teams pick different scenarios, which brings variety to the demos. Marko's Day is the worked example.",
+    7: "WHY IT WORKS / ASK. Tie each card back to a problem from slide 2 — pace, ownership, repeatability, the feeling. Then the ask: pilot on one leadership cohort, Madan delivers, pick a client and a date. Invite reactions from Soham / Ryan."
   };
 
   // ----- interactive timeline (slide index 2) -----
@@ -564,17 +544,16 @@
   const TL_STEPS = 6;
   let tlStep = 0;
   const tlDetails = [
-    { badge: "0:00 · 20 min", title: "Kickoff & Contrast", body: "Instructor sets the aim and runs <b>stock AI live</b> on a Yettel question — competent but generic. Teams form, accounts open, Build Coaches take their seats." },
-    { badge: "0:20 · 35 min", title: "Build 1 — Market Pulse", body: "Teams build their first agent with the Coach pairing alongside. The core discipline lands by doing: <b>a good agent asks before it runs</b>." },
-    { badge: "0:55 · 10 min", title: "Check-in — the one milestone", body: "Each team shows its agent; one fast course-correction each. <b>The room re-levels here</b> — everyone confirmed working before the harder build." },
-    { badge: "1:05 · 40 min", title: "Build 2 — Meeting Prep", body: "The richer build reads live calendar, email and Teams. Teams hit the <b>'updated read' moment</b> where the second prompt reframes the meeting." },
-    { badge: "1:45 · 15 min", title: "Pitch Prep", body: "Teams shape a <b>3-minute live demo</b>: what they built, what surprised them, and where they'd deploy it on their own team Monday." },
-    { badge: "2:00 · 30 min", title: "Demos & Close", body: "Each team demos live. Quick recognition, then the instructor lands the takeaways: <b>stock is generic, custom is yours.</b>" }
+    { badge: "0:00 · 30 min", title: "Common Open — together, with the SMEs", body: "The whole room, led from the front. Welcome and the aim, a live <b>stock-vs-custom contrast</b>, the \"agent = chief of staff\" mental model — then teams form and <b>each picks its scenario</b> from the menu, with its Build Coach." },
+    { badge: "0:30 · 35 min", title: "Build 1 — the first agent", body: "Teams split off and build with the Coach pairing alongside. The core discipline lands by doing: <b>a good agent asks before it runs</b>." },
+    { badge: "1:05 · 10 min", title: "Check-in — the one milestone", body: "Each team shows its agent; one fast course-correction each. <b>The room re-levels here</b> — everyone confirmed working before the harder build." },
+    { badge: "1:15 · 40 min", title: "Build 2 — the richer agent", body: "The harder build reads live calendar, email and Teams. Teams hit the <b>'updated read' moment</b> where a second prompt reframes the whole picture." },
+    { badge: "1:55 · 15 min", title: "Pitch Prep", body: "Teams shape a <b>3-minute live demo</b>: what they built, what surprised them, and where they'd deploy it on their own team Monday." },
+    { badge: "2:10 · 30 min", title: "Demos & Close", body: "Each team demos live — and because teams chose different scenarios, <b>every demo is different.</b> Quick recognition, then the instructor lands the takeaways." }
   ];
-  const tlNodes = () => document.querySelectorAll('#tlTrack .tl__node');
 
   function renderTL() {
-    const nodes = tlNodes();
+    const nodes = document.querySelectorAll('#tlTrack .tl__node');
     nodes.forEach((n, i) => {
       n.classList.toggle('active', i === tlStep);
       n.classList.toggle('done', i < tlStep);
@@ -593,13 +572,8 @@
     if (hint) hint.style.opacity = (tlStep >= TL_STEPS - 1) ? '0.25' : '1';
   }
 
-  // allow clicking a node to jump to it
   document.querySelectorAll('#tlTrack .tl__node').forEach(node => {
-    node.addEventListener('click', (e) => {
-      e.stopPropagation();
-      tlStep = parseInt(node.dataset.step);
-      renderTL();
-    });
+    node.addEventListener('click', (e) => { e.stopPropagation(); tlStep = parseInt(node.dataset.step); renderTL(); });
   });
 
   function updateNotes() { notesContent.textContent = speakerNotes[current] || ''; }
