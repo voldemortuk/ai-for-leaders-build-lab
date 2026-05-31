@@ -212,6 +212,16 @@
   @keyframes orbB{0%,100%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(-5px,-10px) rotate(-10deg);}}
   @keyframes orbC{0%,100%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(3px,-14px) rotate(8deg);}}
 
+  /* bottom nav bar */
+  .nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;background:rgba(0,0,0,.55);padding:8px 14px;border-radius:999px;backdrop-filter:blur(10px);z-index:120;}
+  .nav button{background:rgba(255,255,255,.15);border:0;color:#fff;width:30px;height:30px;border-radius:999px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .nav button:hover{background:rgba(255,255,255,.3);}
+  .nav .count{color:#fff;font-size:12px;padding:0 12px;font-variant-numeric:tabular-nums;font-weight:600;}
+  .nav .dots{display:flex;gap:4px;align-items:center;max-width:45vw;overflow-x:auto;margin:0 4px;}
+  .nav .dots::-webkit-scrollbar{display:none;}
+  .nav .dot{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.3);transition:all .3s;cursor:pointer;flex-shrink:0;}
+  .nav .dot.active{background:var(--cyan);width:20px;}
+
   @media print{ @page{size:1280px 720px;margin:0;} .slide{page-break-after:always;opacity:1!important;pointer-events:auto!important;position:relative!important;} .progress,.brand,.fs,.counter,.zone,.notes{display:none!important;} }
 </style>
 </head>
@@ -477,48 +487,9 @@
     </div>
   </div>
 
-  <!-- 9b · PHASE 2 DIVIDER — THE DEMO -->
-  <div class="slide section" data-notes="Phase 2 — the demo. Madan drives; nobody builds yet. Watch the CEO's world and a finished agent in action, so you know what you're building toward.">
-    <div class="inner"><div class="num">Phase 2 · The demo</div><h2>First, watch<br>one in action.</h2><div class="sub">Madan drives. See a finished agent at work — and the world it reads — before you build your own.</div></div>
-  </div>
-
-  <!-- 9 · PERSONA + WORLD -->
-  <div class="slide" data-notes="The scenario. For this session you are the CEO of a top-3 CEE telecom — 4,200 people, Hungary + Bulgaria, mid-transformation. Six functions report to you. You have no time to prep. Your world is already in the lab: a real inbox, two weeks of calendar, and your priorities in OneDrive. The agents read THIS.">
-    <div class="inner">
-      <div class="shead"><div class="eyebrow">The scenario · whose week is this?</div><div class="h">You are the <span class="accent">CEO</span> of a top-3 CEE telecom</div></div>
-      <p class="lead" style="margin-bottom:16px;">4,200 people across <b>Hungary &amp; Bulgaria</b>, mid-transformation from telco to digital platform. Six functions report to you — <b>CCO · CFO · CPO · CTO · CLO · CSO</b>. Back-to-back meetings, a fast inbox, no time to prepare. The agents read your real world:</p>
-      <div class="c3">
-        <div class="card top"><div class="t">📥 Inbox</div><div class="d">Real threads — board prep, a regulator, a network overrun, departure risk.</div></div>
-        <div class="card top"><div class="t">🗓️ Calendar</div><div class="d">Two full weeks, already populated — ExCo, 1:1s, board prep, vendor escalation.</div></div>
-        <div class="card top"><div class="t">📁 OneDrive</div><div class="d">Your strategic priorities, leadership profiles, and the competitive landscape.</div></div>
-      </div>
-      <div class="banner"><span class="ic">⚔️</span><div>Biggest pressure right now: <b>4iG's fixed-mobile convergence bundle launches Q4</b> — and the market keeps moving overnight.</div></div>
-    </div>
-  </div>
-
-  <!-- 8b · DEMO TIME (Madan drives) -->
-  <div class="slide deep" style="text-align:center;" data-notes="Demo moment — Madan drives, nobody builds yet. I'll open the VM and walk through the CEO's real world: inbox, two weeks of calendar, priorities in OneDrive. This is exactly what your agent reads. Just watch — then it's your turn.">
-    <div class="inner" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
-      <div style="position:relative;width:clamp(120px,14vw,176px);height:clamp(120px,14vw,176px);margin-bottom:clamp(20px,2.5vw,34px);">
-        <div style="position:absolute;inset:-15px;border-radius:50%;border:2px solid rgba(91,196,210,0.25);animation:demoPulse 2.5s ease-in-out infinite;"></div>
-        <div style="position:absolute;inset:-32px;border-radius:50%;border:1.5px solid rgba(91,196,210,0.12);animation:demoPulse 2.5s ease-in-out infinite .5s;"></div>
-        <div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#2C3F8E 0%,#5BC4D2 100%);display:flex;align-items:center;justify-content:center;font-size:clamp(46px,5.5vw,72px);box-shadow:0 16px 60px rgba(91,196,210,0.4),0 0 80px rgba(44,63,142,0.25);">🎬</div>
-        <div style="position:absolute;top:8%;left:-18%;font-size:clamp(16px,1.8vw,22px);animation:orbA 3s ease-in-out infinite;">⚡</div>
-        <div style="position:absolute;top:18%;right:-22%;font-size:clamp(16px,1.8vw,22px);animation:orbB 3.5s ease-in-out infinite;">🛠️</div>
-        <div style="position:absolute;bottom:8%;left:-14%;font-size:clamp(16px,1.8vw,22px);animation:orbC 4s ease-in-out infinite;">🤖</div>
-      </div>
-      <div style="font-size:clamp(54px,8vw,96px);font-weight:800;font-style:italic;color:#10B981;line-height:1;margin-bottom:clamp(6px,0.8vw,10px);text-shadow:0 4px 30px rgba(16,185,129,0.35);">Demo Time</div>
-      <div style="font-size:clamp(40px,5vw,60px);color:#10B981;margin-bottom:clamp(18px,2.4vw,32px);line-height:1;animation:demoBounce 1.4s ease-in-out infinite;">⬇</div>
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:clamp(16px,1.8vw,24px) clamp(28px,3vw,44px);backdrop-filter:blur(8px);max-width:720px;">
-        <div style="font-size:clamp(18px,2.2vw,28px);color:#fff;font-weight:700;margin-bottom:0.3em;">Madan walks the <span style="color:#5BC4D2;">CEO's world</span></div>
-        <div style="font-size:clamp(14px,1.4vw,18px);color:rgba(255,255,255,0.55);">Just watch — then it's your turn to build</div>
-      </div>
-    </div>
-  </div>
-
   <!-- 10 · PHASE 2 DIVIDER -->
   <div class="slide section" data-notes="Phase 2 — now we build. Two use cases on the table; you pick one and build it end to end. The same pattern builds the rest of your team later.">
-    <div class="inner"><div class="num">Phase 3 · Build</div><h2>Now it's<br>your turn to build.</h2><div class="sub">Pick one use case and build it end to end, in three stages. The same pattern builds the rest of your team later.</div></div>
+    <div class="inner"><div class="num">Phase 2 · Build</div><h2>Now it's<br>your turn to build.</h2><div class="sub">Pick one use case and build it end to end, in three stages. The same pattern builds the rest of your team later.</div></div>
   </div>
 
   <!-- 11 · PICK YOUR USE CASE -->
@@ -539,7 +510,7 @@
       <div class="kick">Your build guide</div>
       <div class="big">Let's build it <span class="accent">together.</span></div>
       <div class="sub">Your step-by-step guide is in the Companion. Follow along as we build — one field at a time, Basic &rarr; Intermediate &rarr; Advanced.</div>
-      <div style="margin-top:32px;"><a class="cta" href="pick-your-use-case">Open the build lab &rarr; Pick your use case</a></div>
+      <div style="margin-top:32px;"><a class="cta" href="pick-your-use-case/index.html">Open the build lab &rarr; Pick your use case</a></div>
       <div style="margin-top:18px;font-size:13px;color:rgba(255,255,255,.4);letter-spacing:.04em;">&hellip;/pick-your-use-case</div>
     </div>
   </div>
@@ -803,6 +774,8 @@
 <div class="zone zone--next" id="znext"></div>
 <button class="fs" id="fs" title="Fullscreen (F)">⛶</button>
 <div class="brand"><img src="acceler_logo.png" alt="acceler"></div>
+<div class="nav" id="nav"><button id="navPrev" aria-label="Previous">‹</button><div class="dots" id="dots"></div><button id="navNext" aria-label="Next">›</button><span class="count" id="navCount"></span></div>
+
 <div class="notes" id="notes"><div class="nl">Speaker notes · press “.” to toggle</div><div id="notesC"></div></div>
 
 <script>
@@ -810,7 +783,7 @@
   let cur=0; const $=id=>document.getElementById(id);
   const speaker=slides.map(s=>s.dataset.notes||''); let notesOn=false, ctO;
   function updNotes(){ $('notesC').textContent=speaker[cur]||''; }
-  function progress(){ $('progress').style.width=((cur+1)/total*100)+'%'; const c=$('counter'); c.textContent=(cur+1)+' / '+total; c.classList.add('on'); clearTimeout(ctO); ctO=setTimeout(()=>c.classList.remove('on'),2000); updNotes(); }
+  function progress(){ $('progress').style.width=((cur+1)/total*100)+'%'; const c=$('counter'); c.textContent=(cur+1)+' / '+total; c.classList.add('on'); clearTimeout(ctO); ctO=setTimeout(()=>c.classList.remove('on'),2000); updNotes(); syncNav(); }
   function goTo(n){ if(n<0||n>=total) return; slides[cur].classList.remove('active'); cur=n; slides[cur].classList.add('active'); progress(); }
   document.addEventListener('keydown',e=>{
     if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();goTo(cur+1);}
@@ -822,6 +795,19 @@
   $('zprev').addEventListener('click',()=>goTo(cur-1));
   $('znext').addEventListener('click',()=>goTo(cur+1));
   $('fs').addEventListener('click',()=>{ if(!document.fullscreenElement)document.documentElement.requestFullscreen().catch(()=>{}); else document.exitFullscreen(); });
+
+  // bottom nav bar
+  (function(){
+    var dotsEl=document.getElementById('dots');
+    if(dotsEl){
+      slides.forEach(function(s,i){ var d=document.createElement('div'); d.className='dot'; d.addEventListener('click',function(){goTo(i);}); dotsEl.appendChild(d); });
+      var np=document.getElementById('navPrev'), nn=document.getElementById('navNext');
+      if(np) np.addEventListener('click',function(){goTo(cur-1);});
+      if(nn) nn.addEventListener('click',function(){goTo(cur+1);});
+    }
+  })();
+  function syncNav(){ var dotsEl=document.getElementById('dots'); if(!dotsEl) return; var ch=dotsEl.children; for(var i=0;i<ch.length;i++){ ch[i].classList.toggle('active',i===cur); } var nc=document.getElementById('navCount'); if(nc) nc.textContent=(cur+1)+' / '+total; if(ch[cur]) ch[cur].scrollIntoView({inline:'center',block:'nearest'}); }
+
   let tx=0; document.addEventListener('touchstart',e=>tx=e.touches[0].clientX);
   document.addEventListener('touchend',e=>{ const dx=tx-e.changedTouches[0].clientX; if(Math.abs(dx)>50) goTo(cur+(dx>0?1:-1)); });
   const s0=new URLSearchParams(location.search).get('s'); if(s0!==null) goTo(parseInt(s0)); else progress();
